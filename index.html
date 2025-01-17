@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Facts</h1>
+        <button id="generate-fact">Generate Fact</button>
+        <div id="fact-display" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Music can evoke strong emotions.",
+                "description": "Studies show that music can trigger feelings of happiness, sadness, nostalgia, and even anger."
+            },
+            {
+                "fact": "The world's oldest known musical instrument is over 40,000 years old.",
+                "description": "A flute made from a bird's bone was discovered in a cave in Germany."
+            },
+            {
+                "fact": "Listening to music can improve your workout performance.",
+                "description": "Many athletes use music to enhance their performance and motivation during exercise."
+            },
+            {
+                "fact": "Music can help improve memory.",
+                "description": "Research indicates that music can aid in memory retention and recall, especially in educational settings."
+            },
+            {
+                "fact": "The tempo of music can influence your mood.",
+                "description": "Faster tempos can energize listeners, while slower tempos can have a calming effect."
+            },
+            {
+                "fact": "There are over 1,000 different genres of music.",
+                "description": "From classical to hip-hop, the diversity of music genres is vast and ever-growing."
+            },
+            {
+                "fact": "Music is a universal language.",
+                "description": "Regardless of culture or background, music can connect people and convey emotions."
+            },
+            {
+                "fact": "Playing an instrument can enhance cognitive skills.",
+                "description": "Musicians often show improved memory, attention, and problem-solving abilities."
+            },
+            {
+                "fact": "The Beatles are one of the best-selling music artists of all time.",
+                "description": "They have sold over 600 million albums worldwide."
+            },
+            {
+                "fact": "Music therapy is used to help with mental health.",
+                "description": "It can be effective in treating conditions like depression, anxiety, and PTSD."
+            }
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('fact-display').innerHTML = `<strong>${fact.fact}</strong><br>${fact.description}`;
+        });
+    </script>
+</body>
+</html>
